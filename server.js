@@ -11,6 +11,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 app.get('/'), async (req, res) => {
+  res.send("Server is running successfully !!")
   const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&pageSize=9&page=1&apiKey=${process.env.REACT_APP_API_KEY}`)
   const data = await response.json();
   res.json(data);
