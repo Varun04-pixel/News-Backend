@@ -17,9 +17,9 @@ app.get('/api/news', async (req, res) => {
     let url;
 
     if (query) {
-      url = `https://newsapi.org/v2/everything?q=${query}&pageSize=9&page=${page}&apiKey=${process.env.API_KEY}`;
+      url = `https://newsapi.org/v2/everything?q=${query}&pageSize=9&page=${page}&apiKey=${process.env.REACT_APP_API_KEY}`;
     } else {
-      url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&pageSize=9&page=${page}&apiKey=${process.env.API_KEY}`;
+      url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&pageSize=9&page=${page}&apiKey=${process.env.REACT_APP_API_KEY}`;
     }
 
     const response = await fetch(url);
